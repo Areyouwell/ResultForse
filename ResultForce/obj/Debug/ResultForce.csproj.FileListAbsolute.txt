@@ -1,0 +1,17 @@
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\ResultForce.exe.config
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\ResultForce.exe
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\ResultForce.pdb
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.Form1.resources
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.Properties.Resources.resources
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csproj.GenerateResource.cache
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csproj.CoreCompileInputs.cache
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.exe
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.pdb
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csproj.CopyComplete
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Core.dll
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Orbit.dll
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Core.pdb
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Orbit.pdb
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Windage.dll
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Windage.pdb
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csprojAssemblyReference.cache
