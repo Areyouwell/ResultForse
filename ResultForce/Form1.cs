@@ -222,8 +222,8 @@ namespace ResultForce
             this.chart1.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy-MM-dd";
             this.chart1.ChartAreas[0].AxisX.Minimum = date1.ToOADate();
             this.chart1.ChartAreas[0].AxisX.Maximum = date2.ToOADate();
-            this.chart1.ChartAreas[0].AxisX.ArrowStyle = AxisArrowStyle.Triangle;
-            this.chart1.ChartAreas[0].AxisY.ArrowStyle = AxisArrowStyle.Triangle;
+            this.chart1.ChartAreas[0].AxisX.ArrowStyle = AxisArrowStyle.Triangle; //Устанавливаем стрелочки
+            this.chart1.ChartAreas[0].AxisY.ArrowStyle = AxisArrowStyle.Triangle; //Устанавливаем стрелочки
 
             //очищаем старые графики
             this.chart1.Series[0].Points.Clear();
