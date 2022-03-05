@@ -14,12 +14,12 @@ namespace ResultForce
 {
     public partial class Form1 : Form
     {
-        private string path = "";
-        private DateTime dateAll1, dateAll2, date1, date2;
+        private string path = ""; //Путь до Tle файла
+        private DateTime dateAll1, dateAll2, date1, date2; 
         private int stepNum = -1;
         private string stepType = "";
-        private List<List<string>> AllTle;
-        private List<List<string>> SortTle; 
+        private List<List<string>> AllTle; //Список всех Tle координат
+        private List<List<string>> SortTle; //Спико отсортированных Tle координат
         Dictionary<DateTime, double> PointsForKinetic;
         Dictionary<DateTime, double> PointsForPotential;
         private enum TimeslotType
