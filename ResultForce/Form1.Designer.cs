@@ -56,8 +56,9 @@ namespace ResultForce
             this.radioButton_FirstMonth = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox_PotentialEn = new System.Windows.Forms.CheckBox();
-            this.checkBox_KineticEn = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radioButton_atmosphericResCoeff = new System.Windows.Forms.RadioButton();
+            this.radioButton_distanceFromEarthToSite = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.numericUpDown_Interval = new System.Windows.Forms.NumericUpDown();
@@ -88,21 +89,23 @@ namespace ResultForce
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
             series1.Color = System.Drawing.Color.Fuchsia;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             series1.Legend = "Legend1";
-            series1.LegendText = "Alpha(t)    (Kinetic)";
+            series1.LegendText = "Distance";
             series1.Name = "Series1";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
             series2.Color = System.Drawing.Color.Navy;
             series2.Legend = "Legend1";
-            series2.LegendText = "2*Alpha(t)    (Potential) ";
+            series2.LegendText = "Res Coeff ";
             series2.Name = "Series2";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(962, 537);
+            this.chart1.Size = new System.Drawing.Size(997, 537);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // menuStrip1
             // 
@@ -150,7 +153,7 @@ namespace ResultForce
             this.groupBox1.Controls.Add(this.chart1);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(974, 575);
+            this.groupBox1.Size = new System.Drawing.Size(1009, 575);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graph";
@@ -160,9 +163,9 @@ namespace ResultForce
             this.groupBox2.Controls.Add(this.textBox_Path);
             this.groupBox2.Controls.Add(this.Button_SearchTleFile);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(1007, 27);
+            this.groupBox2.Location = new System.Drawing.Point(1027, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(285, 141);
+            this.groupBox2.Size = new System.Drawing.Size(265, 141);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Path";
@@ -173,12 +176,12 @@ namespace ResultForce
             this.textBox_Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Path.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_Path.ForeColor = System.Drawing.Color.Red;
-            this.textBox_Path.Location = new System.Drawing.Point(11, 86);
+            this.textBox_Path.Location = new System.Drawing.Point(6, 86);
             this.textBox_Path.Multiline = true;
             this.textBox_Path.Name = "textBox_Path";
             this.textBox_Path.ReadOnly = true;
             this.textBox_Path.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox_Path.Size = new System.Drawing.Size(259, 41);
+            this.textBox_Path.Size = new System.Drawing.Size(255, 41);
             this.textBox_Path.TabIndex = 2;
             this.textBox_Path.WordWrap = false;
             this.textBox_Path.TextChanged += new System.EventHandler(this.textBox_Path_TextChanged);
@@ -186,7 +189,7 @@ namespace ResultForce
             // Button_SearchTleFile
             // 
             this.Button_SearchTleFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Button_SearchTleFile.Location = new System.Drawing.Point(11, 46);
+            this.Button_SearchTleFile.Location = new System.Drawing.Point(6, 46);
             this.Button_SearchTleFile.Name = "Button_SearchTleFile";
             this.Button_SearchTleFile.Size = new System.Drawing.Size(85, 34);
             this.Button_SearchTleFile.TabIndex = 1;
@@ -198,7 +201,7 @@ namespace ResultForce
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Location = new System.Drawing.Point(7, 16);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(254, 24);
@@ -216,9 +219,9 @@ namespace ResultForce
             this.groupBox3.Controls.Add(this.radioButton_FirstYear);
             this.groupBox3.Controls.Add(this.radioButton_FirstMonth);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(1007, 174);
+            this.groupBox3.Location = new System.Drawing.Point(1027, 174);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(285, 206);
+            this.groupBox3.Size = new System.Drawing.Size(265, 206);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Interval";
@@ -227,7 +230,7 @@ namespace ResultForce
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(26, 167);
+            this.label5.Location = new System.Drawing.Point(6, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 24);
             this.label5.TabIndex = 8;
@@ -237,7 +240,7 @@ namespace ResultForce
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(26, 136);
+            this.label4.Location = new System.Drawing.Point(6, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 24);
             this.label4.TabIndex = 7;
@@ -246,7 +249,7 @@ namespace ResultForce
             // dateTimePicker_Interval2
             // 
             this.dateTimePicker_Interval2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_Interval2.Location = new System.Drawing.Point(90, 171);
+            this.dateTimePicker_Interval2.Location = new System.Drawing.Point(59, 169);
             this.dateTimePicker_Interval2.Name = "dateTimePicker_Interval2";
             this.dateTimePicker_Interval2.Size = new System.Drawing.Size(158, 20);
             this.dateTimePicker_Interval2.TabIndex = 6;
@@ -255,7 +258,7 @@ namespace ResultForce
             // dateTimePicker_Interval1
             // 
             this.dateTimePicker_Interval1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_Interval1.Location = new System.Drawing.Point(90, 140);
+            this.dateTimePicker_Interval1.Location = new System.Drawing.Point(59, 140);
             this.dateTimePicker_Interval1.Name = "dateTimePicker_Interval1";
             this.dateTimePicker_Interval1.Size = new System.Drawing.Size(158, 20);
             this.dateTimePicker_Interval1.TabIndex = 5;
@@ -264,7 +267,7 @@ namespace ResultForce
             // radioButton_AnotherInterval
             // 
             this.radioButton_AnotherInterval.AutoSize = true;
-            this.radioButton_AnotherInterval.Location = new System.Drawing.Point(30, 113);
+            this.radioButton_AnotherInterval.Location = new System.Drawing.Point(10, 113);
             this.radioButton_AnotherInterval.Name = "radioButton_AnotherInterval";
             this.radioButton_AnotherInterval.Size = new System.Drawing.Size(98, 17);
             this.radioButton_AnotherInterval.TabIndex = 4;
@@ -276,7 +279,7 @@ namespace ResultForce
             // radioButton_AllTime
             // 
             this.radioButton_AllTime.AutoSize = true;
-            this.radioButton_AllTime.Location = new System.Drawing.Point(30, 90);
+            this.radioButton_AllTime.Location = new System.Drawing.Point(10, 90);
             this.radioButton_AllTime.Name = "radioButton_AllTime";
             this.radioButton_AllTime.Size = new System.Drawing.Size(57, 17);
             this.radioButton_AllTime.TabIndex = 3;
@@ -288,7 +291,7 @@ namespace ResultForce
             // radioButton_FirstYear
             // 
             this.radioButton_FirstYear.AutoSize = true;
-            this.radioButton_FirstYear.Location = new System.Drawing.Point(30, 67);
+            this.radioButton_FirstYear.Location = new System.Drawing.Point(10, 67);
             this.radioButton_FirstYear.Name = "radioButton_FirstYear";
             this.radioButton_FirstYear.Size = new System.Drawing.Size(64, 17);
             this.radioButton_FirstYear.TabIndex = 2;
@@ -300,7 +303,7 @@ namespace ResultForce
             // radioButton_FirstMonth
             // 
             this.radioButton_FirstMonth.AutoSize = true;
-            this.radioButton_FirstMonth.Location = new System.Drawing.Point(30, 44);
+            this.radioButton_FirstMonth.Location = new System.Drawing.Point(9, 43);
             this.radioButton_FirstMonth.Name = "radioButton_FirstMonth";
             this.radioButton_FirstMonth.Size = new System.Drawing.Size(73, 17);
             this.radioButton_FirstMonth.TabIndex = 1;
@@ -322,38 +325,50 @@ namespace ResultForce
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox_PotentialEn);
-            this.groupBox4.Controls.Add(this.checkBox_KineticEn);
-            this.groupBox4.Location = new System.Drawing.Point(1007, 518);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.radioButton_atmosphericResCoeff);
+            this.groupBox4.Controls.Add(this.radioButton_distanceFromEarthToSite);
+            this.groupBox4.Location = new System.Drawing.Point(1027, 507);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(285, 84);
+            this.groupBox4.Size = new System.Drawing.Size(265, 95);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Method";
+            this.groupBox4.Text = "Chart";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // checkBox_PotentialEn
+            // label6
             // 
-            this.checkBox_PotentialEn.AutoSize = true;
-            this.checkBox_PotentialEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_PotentialEn.Location = new System.Drawing.Point(30, 49);
-            this.checkBox_PotentialEn.Name = "checkBox_PotentialEn";
-            this.checkBox_PotentialEn.Size = new System.Drawing.Size(163, 28);
-            this.checkBox_PotentialEn.TabIndex = 1;
-            this.checkBox_PotentialEn.Text = "potential energy";
-            this.checkBox_PotentialEn.UseVisualStyleBackColor = true;
-            this.checkBox_PotentialEn.CheckedChanged += new System.EventHandler(this.checkBox_PotentialEn_CheckedChanged);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(7, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 24);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Select chart";
             // 
-            // checkBox_KineticEn
+            // radioButton_atmosphericResCoeff
             // 
-            this.checkBox_KineticEn.AutoSize = true;
-            this.checkBox_KineticEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox_KineticEn.Location = new System.Drawing.Point(30, 19);
-            this.checkBox_KineticEn.Name = "checkBox_KineticEn";
-            this.checkBox_KineticEn.Size = new System.Drawing.Size(146, 28);
-            this.checkBox_KineticEn.TabIndex = 0;
-            this.checkBox_KineticEn.Text = "kinetic energy";
-            this.checkBox_KineticEn.UseVisualStyleBackColor = true;
-            this.checkBox_KineticEn.CheckedChanged += new System.EventHandler(this.checkBox_KineticEn_CheckedChanged);
+            this.radioButton_atmosphericResCoeff.AutoSize = true;
+            this.radioButton_atmosphericResCoeff.Location = new System.Drawing.Point(10, 66);
+            this.radioButton_atmosphericResCoeff.Name = "radioButton_atmosphericResCoeff";
+            this.radioButton_atmosphericResCoeff.Size = new System.Drawing.Size(185, 17);
+            this.radioButton_atmosphericResCoeff.TabIndex = 1;
+            this.radioButton_atmosphericResCoeff.TabStop = true;
+            this.radioButton_atmosphericResCoeff.Text = "atmospheric resistance coefficient";
+            this.radioButton_atmosphericResCoeff.UseVisualStyleBackColor = true;
+            this.radioButton_atmosphericResCoeff.CheckedChanged += new System.EventHandler(this.radioButton_atmosphericResCoeff_CheckedChanged);
+            // 
+            // radioButton_distanceFromEarthToSite
+            // 
+            this.radioButton_distanceFromEarthToSite.AutoSize = true;
+            this.radioButton_distanceFromEarthToSite.Location = new System.Drawing.Point(10, 43);
+            this.radioButton_distanceFromEarthToSite.Name = "radioButton_distanceFromEarthToSite";
+            this.radioButton_distanceFromEarthToSite.Size = new System.Drawing.Size(165, 17);
+            this.radioButton_distanceFromEarthToSite.TabIndex = 0;
+            this.radioButton_distanceFromEarthToSite.TabStop = true;
+            this.radioButton_distanceFromEarthToSite.Text = "distance from earth to satellite";
+            this.radioButton_distanceFromEarthToSite.UseVisualStyleBackColor = true;
+            this.radioButton_distanceFromEarthToSite.CheckedChanged += new System.EventHandler(this.radioButton_distanceFromEarthToSite_CheckedChanged);
             // 
             // label3
             // 
@@ -373,16 +388,16 @@ namespace ResultForce
             this.groupBox5.Controls.Add(this.radioButton_AnotherStep);
             this.groupBox5.Controls.Add(this.radioButton_DefaultStep);
             this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Location = new System.Drawing.Point(1007, 386);
+            this.groupBox5.Location = new System.Drawing.Point(1027, 386);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(285, 126);
+            this.groupBox5.Size = new System.Drawing.Size(265, 115);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Step";
             // 
             // numericUpDown_Interval
             // 
-            this.numericUpDown_Interval.Location = new System.Drawing.Point(164, 90);
+            this.numericUpDown_Interval.Location = new System.Drawing.Point(128, 90);
             this.numericUpDown_Interval.Name = "numericUpDown_Interval";
             this.numericUpDown_Interval.Size = new System.Drawing.Size(97, 20);
             this.numericUpDown_Interval.TabIndex = 5;
@@ -391,7 +406,7 @@ namespace ResultForce
             // comboBox_typeInterval
             // 
             this.comboBox_typeInterval.FormattingEnabled = true;
-            this.comboBox_typeInterval.Location = new System.Drawing.Point(30, 90);
+            this.comboBox_typeInterval.Location = new System.Drawing.Point(9, 89);
             this.comboBox_typeInterval.Name = "comboBox_typeInterval";
             this.comboBox_typeInterval.Size = new System.Drawing.Size(102, 21);
             this.comboBox_typeInterval.TabIndex = 4;
@@ -400,7 +415,7 @@ namespace ResultForce
             // radioButton_AnotherStep
             // 
             this.radioButton_AnotherStep.AutoSize = true;
-            this.radioButton_AnotherStep.Location = new System.Drawing.Point(31, 67);
+            this.radioButton_AnotherStep.Location = new System.Drawing.Point(10, 67);
             this.radioButton_AnotherStep.Name = "radioButton_AnotherStep";
             this.radioButton_AnotherStep.Size = new System.Drawing.Size(84, 17);
             this.radioButton_AnotherStep.TabIndex = 3;
@@ -412,7 +427,7 @@ namespace ResultForce
             // radioButton_DefaultStep
             // 
             this.radioButton_DefaultStep.AutoSize = true;
-            this.radioButton_DefaultStep.Location = new System.Drawing.Point(31, 44);
+            this.radioButton_DefaultStep.Location = new System.Drawing.Point(10, 44);
             this.radioButton_DefaultStep.Name = "radioButton_DefaultStep";
             this.radioButton_DefaultStep.Size = new System.Drawing.Size(80, 17);
             this.radioButton_DefaultStep.TabIndex = 2;
@@ -466,8 +481,6 @@ namespace ResultForce
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox_PotentialEn;
-        private System.Windows.Forms.CheckBox checkBox_KineticEn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -486,6 +499,9 @@ namespace ResultForce
         private System.Windows.Forms.DateTimePicker dateTimePicker_Interval2;
         private System.Windows.Forms.Button Button_SearchTleFile;
         private System.Windows.Forms.TextBox textBox_Path;
+        private System.Windows.Forms.RadioButton radioButton_atmosphericResCoeff;
+        private System.Windows.Forms.RadioButton radioButton_distanceFromEarthToSite;
+        private System.Windows.Forms.Label label6;
     }
 }
 

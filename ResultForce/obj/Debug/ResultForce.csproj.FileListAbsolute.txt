@@ -14,4 +14,5 @@ D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Core.pdb
 D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Orbit.pdb
 D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Windage.dll
 D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\bin\Debug\Windage.pdb
-D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csprojAssemblyReference.cache
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csproj.AssemblyReference.cache
+D:\Lesson\programming\Си #\astro\ResultForce\ResultForce\obj\Debug\ResultForce.csproj.SuggestedBindingRedirects.cache
